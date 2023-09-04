@@ -209,7 +209,7 @@ function addNewTodo(e) {
         return
     } else {
         for (let i = 0; i < todos.length; i++) {    
-            if (todos[i].text === todoInput.value) {
+            if (todos[i].text === todoInput.value.trim()) {
                 todoInput.blur()
                 modal.hidden = false
                 okBtn.focus()
@@ -307,7 +307,7 @@ createCircle.addEventListener("click", (e) => addNewTodo(e))
 
 todoForm.addEventListener("submit", (e) => addNewTodo(e))
 
-okBtn.addEventListener("keydown", (e) => hideModal(e))
+okBtn.addEventListener("click", (e) => hideModal(e))
 
 xmark.addEventListener("click", (e) => hideModal(e))
 
